@@ -5,6 +5,17 @@
 @section('content')
 
 <div class="mt-5">
+
+@if ($errors->any())
+	<div class="alert alert-danger">
+		<ul>
+			@foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+		</ul>
+	</div>
+@endif
+
 	<form action="{{route('store')}}">
 		@csrf	
 	  <div class="mb-3">
@@ -22,8 +33,19 @@
 	    <input type="text" name="text" class="form-control" required>
 	  </div>
 
+	 <div class="form-group mt-5">
+	   {!! NoCaptcha::display() !!}
+
+	 </div>
 	  <button type="submit" class="btn btn-primary">Оставить отзыв</button>
 	</form>
+
+
+
 </div>
 
 @endsection
+
+@push('scripts')
+	 {!! NoCaptcha::renderJs() !!}
+@endpush

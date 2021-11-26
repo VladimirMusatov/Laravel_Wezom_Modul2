@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 use App\Models\Post;
 
 class PostController extends Controller
@@ -21,6 +22,13 @@ class PostController extends Controller
     }
 
     public function store(Request $request){
+
+                $validate = $request->validate([ 
+                        'name' => ['alpha_dash','regex:/(^([a-zA-Z]+)(\d+)?$)/u'],
+                        'g-recaptcha-response' => 'required | captcha' 
+                    ]);
+
+
 
         $data = $request->all();
         Post::create($data);
