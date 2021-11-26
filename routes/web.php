@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Auth::routes();
+Route::redirect('/','/home');
+
+Route::get('/store',[PostController::class, 'store'])->name('store');
+Route::get('/home',[PostController::class, 'index'])->name('index');
+Route::get('/form',[PostController::class,'create'])->name('create');
+
+
+
+Route::group(['middleware'=>['role:admin']],function(){
+
+    Route::get('/admin',[AdminController::class,'index'])->name('admin');
+    Route::put('/update/{id}',[AdminController::class, 'update'])->name('update');
+    Route::get('/delete/{id}',[AdminController::class, 'destroy'])->name('delete');
+    Route::get('/edit/{id}',[AdminController::class, 'edit'])->name('edit');
+
+}); 
