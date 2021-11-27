@@ -25,7 +25,7 @@ class PostController extends Controller
 
                 $validate = $request->validate([ 
                         'name' => ['alpha_dash','regex:/(^([a-zA-Z]+)(\d+)?$)/u'],
-                        'g-recaptcha-response' => 'required | captcha' 
+                        'g-recaptcha-response' => 'required | captcha'
                     ]);
 
 
