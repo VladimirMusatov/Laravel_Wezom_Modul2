@@ -11,6 +11,7 @@ class PostController extends Controller
     public function index(Request $request){
 
         $PostQuery = Post::query();
+        //Выводить только опубликованные новости
         $PostQuery->where('status','=', '1');
         $posts = $PostQuery->paginate(4)->withPath("?" . $request->getQueryString());
         return view('home',compact('posts')); 

@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('name');
             $table->text('email');
             $table->text('text');
+            //Статус отзыва(Опубликован или нет)
             $table->boolean('status')->default(false);
             $table->timestamps();
         });

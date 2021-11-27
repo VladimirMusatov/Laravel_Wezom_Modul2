@@ -18,12 +18,13 @@ use App\Http\Controllers\AdminController;
 Auth::routes();
 Route::redirect('/','/home');
 
+//Общедоступные роуты
 Route::get('/store',[PostController::class, 'store'])->name('store');
 Route::get('/home',[PostController::class, 'index'])->name('index');
 Route::get('/form',[PostController::class,'create'])->name('create');
 
 
-
+// Роуты доступны лишь пользователю с ролью админ
 Route::group(['middleware'=>['role:admin']],function(){
 
     Route::get('/admin',[AdminController::class,'index'])->name('admin');

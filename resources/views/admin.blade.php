@@ -24,7 +24,7 @@
       <td>{{$post->email}}</td>
       <td>{{$post->text}}</td>
       <td>
-      	@if(($post->status) == 0)
+    @if(($post->status) == 0)
 			Отзыв не опубликован
 		@else
 			Отзыв опубликован
@@ -39,6 +39,7 @@
 	  	<a class="btn btn-danger" href="{{route('delete', $post)}}">Удалить отзыв</a>
 	  </td>
 
+	  <!-- Кнопка "Опбуликовать отзыв" доступна лишу возле неопубликованных отзывов -->
 	  	@if(($post->status) == 0)
 		<td>	  	
 			  <form action="{{route('update', $post)}}" method="POST">
