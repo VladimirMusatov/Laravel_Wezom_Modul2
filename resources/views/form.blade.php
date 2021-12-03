@@ -30,7 +30,7 @@
 
 	  <div class="mb-3">
 	 	 <label class="form-label">Текст</label>
-	    <input type="text" name="text" class="form-control" required>
+	 	 <textarea name="text" class="form-control" required></textarea>
 	  </div>
 
 	 <div class="form-group mt-5">
