@@ -34,7 +34,7 @@
 	  </div>
 
 	 <div class="form-group mt-5">
-	   {!! NoCaptcha::display() !!}
+	   {!! NoCaptcha::display() !!}	
 
 	 </div>
 	  <button type="submit" class="btn btn-primary">Оставить отзыв</button>
