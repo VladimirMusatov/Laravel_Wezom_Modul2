@@ -23,12 +23,12 @@ class AdminSeeder extends Seeder
 
         DB::table('roles')->insert([
             'name' => 'admin',
-            'guard_name' => 'admin',
+            'guard_name' => 'web',
         ]);
 
         DB::table('roles')->insert([
             'name'=> 'user',
-            'guard_name' => 'user',
+            'guard_name' => 'web',
         ]);
 
         DB::table('model_has_roles')->insert([

@@ -45,7 +45,11 @@ DB_PASSWORD=
 php artisan migrate
 
 Запустить сиды
-php artisan db:seed --class=AdminSeeder
+php artisan db:seed
+
+Почта и пароль от админки
+Почта:admin@admin.com
+Пароль:admin
 
 Для того чтобы Капча заработала необходимо добавить секретный ключ и ключ сайта в файл .env
 
