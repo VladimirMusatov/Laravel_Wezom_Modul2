@@ -16,9 +16,9 @@
 	</div>
 @endif
 
-	<form action="{{route('store')}}">
+	<form method="POST" style="width:50%; margin: 0 auto;" action="{{route('store')}}">
 		@csrf	
-	  <div class="mb-3">
+	  <div class="mb-4">
 	    <label class="form-label">Имя</label>
 	    <input type="text" name='name' class="form-control" required>
 	  </div>	

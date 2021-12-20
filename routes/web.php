@@ -21,7 +21,7 @@ Route::redirect('/','/home');
 //Общедоступные роуты
 
 //Сохранение отзыва
-Route::get('/store',[PostController::class, 'store'])->name('store');
+Route::post('/store',[PostController::class, 'store'])->name('store');
 //Вывод списка отзывов с разбивкой по страницам
 Route::get('/home',[PostController::class, 'index'])->name('index');
 //Добавление отзыва
