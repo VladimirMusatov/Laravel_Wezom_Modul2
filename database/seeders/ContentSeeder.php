@@ -14,11 +14,11 @@ class ContentSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 1; $i <= 6; $i++)
+        for($i = 1; $i <= 18; $i++)
         {
 
         $status = rand(0, 1);
-        $second = rand(10, 60);
+        $second = rand(10, 59);
         $hour = rand(10,23);
         $year = rand(1988, 2020);
         
