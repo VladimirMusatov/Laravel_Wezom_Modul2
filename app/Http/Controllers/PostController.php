@@ -25,8 +25,9 @@ class PostController extends Controller
     public function store(Request $request){
 
                 $validate = $request->validate([ 
-                'name' => ['alpha_dash','regex:/(^([a-zA-Z]+)(\d+)?$)/u'],
-                'g-recaptcha-response' => 'required | captcha'
+                'name' => ['alpha_dash','regex:/(^([a-zA-Z]+)(\d+)?$)/u','required'],
+                'email' => ['required'],
+
                 ]);
 
         $data = $request->all();

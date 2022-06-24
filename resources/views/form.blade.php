@@ -20,23 +20,18 @@
 		@csrf	
 	  <div class="mb-4">
 	    <label class="form-label">Имя</label>
-	    <input type="text" name='name' class="form-control" required>
+	    <input type="text" name='name' class="form-control">
 	  </div>	
 
 	  <div class="mb-3">
 	    <label class="form-label">E-mail</label>
-	    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+	    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 	  </div>
 
 	  <div class="mb-3">
 	 	 <label class="form-label">Текст</label>
 	 	 <textarea name="text" class="form-control" required></textarea>
 	  </div>
-
-	 <div class="form-group mt-5">
-	   {!! NoCaptcha::display() !!}	
-
-	 </div>
 	  <button type="submit" class="btn btn-primary">Оставить отзыв</button>
 	</form>
 
